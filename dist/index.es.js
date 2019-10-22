@@ -65,7 +65,10 @@ var index = (function (locale) {
       return result;
     });
   });
-  return Children.map(flat(str), function (child) {
+  var children = flat(str).filter(function (s) {
+    return !!s;
+  });
+  return Children.map(children, function (child) {
     return child;
   });
 });
