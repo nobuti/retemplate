@@ -1,29 +1,36 @@
 import babel from 'rollup-plugin-babel'
-import nodeResolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
-import uglify from 'rollup-plugin-uglify'
+import external from 'rollup-plugin-peer-deps-external'
+import postcss from 'rollup-plugin-postcss'
+import resolve from 'rollup-plugin-node-resolve'
+import url from 'rollup-plugin-url'
 
-const createConfig = (input, output, additionnalPlugins = []) => ({
-  input,
-  output: {
-    file: output,
-    format: 'cjs'
-  },
+import pkg from './package.json'
+
+export default {
+  input: 'src/index.js',
+  output: [
+    {
+      file: pkg.main,
+      format: 'cjs',
+      sourcemap: true
+    },
+    {
+      file: pkg.module,
+      format: 'es',
+      sourcemap: true
+    }
+  ],
   plugins: [
-    nodeResolve({
-      jsnext: true
+    external(),
+    postcss({
+      modules: true
     }),
-    commonjs({
-      include: 'node_modules/**'
-    }),
+    url(),
     babel({
       exclude: 'node_modules/**'
     }),
-    ...additionnalPlugins
+    resolve(),
+    commonjs()
   ]
-})
-
-export default [
-  createConfig('src/index.js', 'lib/index.js'),
-  createConfig('src/index.js', 'lib/index.min.js', [uglify()])
-]
+}

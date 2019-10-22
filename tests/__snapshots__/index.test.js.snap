@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`template should replace string with data 1`] = `
+<div>
+  hello 
+  girl
+</div>
+`;
+
+exports[`template should replace string with data function result 1`] = `
+<div>
+  good 
+  morning
+</div>
+`;
+
+exports[`template should replace string with data function result 2`] = `
+<div>
+  hello 
+  <span>
+    world
+  </span>
+</div>
+`;
+
+exports[`template should work without data 1`] = `
+<div>
+  hello
+</div>
+`;
