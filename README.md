@@ -9,9 +9,17 @@ use case is similar to using String.prototype.replace except for React.
 # Usage
 
 ```
-import t from 'retemplate'
+import t from '@nobuti/retemplate'
 
-render() { return <div>{template("hola {mundo} cruel {mundo} foo {wadus}", { mundo: () =>
-"<span>mundo</span>", wadus: "foo" })}</div> }
+render() { 
+  return (
+    <div>
+      {template("hola {mundo} cruel {mundo} foo {wadus}", { 
+        mundo: () => <span>mundo</span>, 
+        wadus: "foo" 
+      })}
+    </div>
+  )
+}
 
 ```
