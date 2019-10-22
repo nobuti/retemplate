@@ -4,6 +4,20 @@
   "description": "String replace with jsx children",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nobuti/retemplate.git"
+  },
+  "keywords": [
+    "react",
+    "utility",
+    "template"
+  ],
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && BABEL_ENV=production rollup --config rollup.config.js",
@@ -41,5 +55,8 @@
   },
   "peerDependencies": {
     "react": "^16.10.2"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
