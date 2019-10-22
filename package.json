@@ -1,6 +1,6 @@
 {
   "name": "@nobuti/retemplate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "String replace with jsx children",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
