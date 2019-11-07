@@ -9,7 +9,7 @@ use case is similar to using String.prototype.replace except for React.
 # Usage
 
 ```
-import t from '@nobuti/retemplate'
+import template from '@nobuti/retemplate'
 
 render() { 
   return (
