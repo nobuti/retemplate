@@ -62,7 +62,7 @@ var index = (function (locale) {
   Object.keys(data).forEach(function (key) {
     var re = new RegExp('{' + key + '}', 'g');
     str = flat(str).map(function (x) {
-      var arr = x.split(re);
+      var arr = x.toString().split(re);
       var result = replace(arr, key, data);
       return result;
     });
