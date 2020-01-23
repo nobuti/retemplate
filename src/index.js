@@ -32,7 +32,7 @@ export default (locale, data = {}) => {
   Object.keys(data).forEach(key => {
     const re = new RegExp('{' + key + '}', 'g')
     str = flat(str).map(x => {
-      const arr = x.split(re)
+      const arr = x.toString().split(re)
       const result = replace(arr, key, data)
       return result
     })
